@@ -165,8 +165,21 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>,Iterabl
 	 * BS-treet, null ellers. Uten bruk av rekursjon. /
 	 ************************************************************************/
 	public T finn2(T element) {
-		// TODO
-		return null;
+		BinaerTreNode<T> node = rot;
+		T resultat = null;
+
+		while (node != null && resultat == null) {
+			int comp = element.compareTo(node.getElement());
+
+			if (comp == 0)
+				resultat = node.getElement();
+			else if (comp < 0)
+				node = node.getVenstre();
+			else
+				node = node.getHoyre();
+		}
+
+		return resultat;
 	}
 
 	public void visInorden() {
