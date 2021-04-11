@@ -1,6 +1,6 @@
 package no.hvl.dat102;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -40,6 +40,23 @@ public class KjedetBSTreADTTest {
 		 * du om elementene fins og til slutt sjekker du at e7 ikke fins
 		 */
 
+		bs.leggTil(e5);
+		bs.leggTil(e4);
+		bs.leggTil(e6);
+		bs.leggTil(e3);
+		bs.leggTil(e1);
+		bs.leggTil(e2);
+		bs.leggTil(e0);
+
+		assertEquals(e0, bs.finn(e0));
+		assertEquals(e1, bs.finn(e1));
+		assertEquals(e2, bs.finn(e2));
+		assertEquals(e3, bs.finn(e3));
+		assertEquals(e4, bs.finn(e4));
+		assertEquals(e5, bs.finn(e5));
+		assertEquals(e6, bs.finn(e6));
+
+		assertNull(bs.finn(e7));
 	}
 
 	/**
@@ -52,6 +69,24 @@ public class KjedetBSTreADTTest {
 		 * Her legge du først inn e0...e6 i en vilkårlig rekkefølge og så fjerne du
 		 * minste hele tiden
 		 */
+
+		bs.leggTil(e2);
+		bs.leggTil(e0);
+		bs.leggTil(e5);
+		bs.leggTil(e4);
+		bs.leggTil(e6);
+		bs.leggTil(e3);
+		bs.leggTil(e1);
+
+		assertEquals(1, bs.fjernMin());
+		assertEquals(2, bs.fjernMin());
+		assertEquals(3, bs.fjernMin());
+		assertEquals(4, bs.fjernMin());
+		assertEquals(5, bs.fjernMin());
+		assertEquals(6, bs.fjernMin());
+		assertEquals(7, bs.fjernMin());
+
+		assertNull(bs.fjernMin());
 	}
 
 	/**
