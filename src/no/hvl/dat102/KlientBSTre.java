@@ -6,7 +6,7 @@ public class KlientBSTre {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		KjedetBSTre bstre = new KjedetBSTre();
+		KjedetBSTre<Integer> bstre = new KjedetBSTre<>();
 
 		bstre.leggTil(7);
 		bstre.leggTil(5);
@@ -39,6 +39,10 @@ public class KlientBSTre {
 		} else {
 			System.out.println("Elementet " + element + " fins ikke i bs-treet");
 		}
+
+		System.out.println();
+		bstre.leggTil(-24);
+		System.out.println(bstre.finnMin());
 	}
 
 }

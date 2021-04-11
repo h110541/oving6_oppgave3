@@ -117,8 +117,15 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>,Iterabl
 	 ******************************************************************/
 	@Override
 	public T finnMin() {
-		// TODO
-		return null;
+		if (antall == 0)
+			return null;
+
+		BinaerTreNode<T> node = rot;
+
+		while (node.getVenstre() != null)
+			node = node.getVenstre();
+
+		return node.getElement();
 	}//
 
 	/******************************************************************
