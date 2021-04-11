@@ -10,6 +10,8 @@ import java.util.Iterator;
 public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>,Iterable<T> {
 
 	private int antall;
+	private BinaerTreNode<T> rot;
+
 	/**
 	 * @return the rot
 	 */
@@ -23,8 +25,6 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>,Iterabl
 	public void setRot(BinaerTreNode<T> rot) {
 		this.rot = rot;
 	}
-
-	private BinaerTreNode<T> rot;
 
 	/******************************************************************
 	 * Oppretter et tomt binært søketre.
@@ -70,8 +70,31 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>,Iterabl
 	}
 
 	private BinaerTreNode<T> leggTilRek(BinaerTreNode<T> p, T element) {
-		// TODO
-		return null;
+
+		if (p == null)
+			return (new BinaerTreNode<T>(element));
+
+		if (element.compareTo(p.getElement()) < 0) {
+			BinaerTreNode<T> venstre = p.getVenstre();
+
+			if (venstre == null) {
+				p.setVenstre(new BinaerTreNode<T>(element));
+			} else {
+				leggTilRek(venstre, element);
+			}
+
+		} else {
+			BinaerTreNode<T> hoyre = p.getHoyre();
+
+			if (hoyre == null) {
+				p.setHoyre(new BinaerTreNode<T>(element));
+			} else {
+				leggTilRek(hoyre, element);
+			}
+
+		}
+
+		return p;
 	}
 
 	/******************************************************************
