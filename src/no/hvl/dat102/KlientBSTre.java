@@ -42,7 +42,7 @@ public class KlientBSTre {
 
 		System.out.println();
 		bstre.leggTil(24);
-		System.out.println(bstre.finn2(-1231));
+		System.out.println(bstre.finn(4));
 	}
 
 }

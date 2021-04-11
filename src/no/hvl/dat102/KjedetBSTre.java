@@ -152,13 +152,25 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>,Iterabl
 	public T finn(T element) {
 		// Søk med rekursiv hjelpemetode
 
-		// return finnRek(element, rot);
-		return null;
+		return finnRek(element, rot);
 	}
 
-	// Den rekursive hjelpemetoden for søking
+	private T finnRek(T element, BinaerTreNode<T> node) {
+		if (node == null)
+			return null;
 
-	// TODO
+		T resultat = null;
+		int comp = element.compareTo(node.getElement());
+
+		if (comp == 0)
+			resultat = node.getElement();
+		else if (comp < 0)
+			resultat = finnRek(element, node.getVenstre());
+		else
+			resultat = finnRek(element, node.getHoyre());
+
+		return resultat;
+	}
 
 	/************************************************************************
 	 * Returnerer en referanse til det spesifiserte elementet hvis det fins i dette
