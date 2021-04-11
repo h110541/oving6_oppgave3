@@ -71,39 +71,27 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>,Iterabl
 
 	private BinaerTreNode<T> leggTilRek(BinaerTreNode<T> p, T element) {
 
-		if (p == null)
+		if (antall == 0)
 			return (new BinaerTreNode<T>(element));
 
 		if (element.compareTo(p.getElement()) < 0) {
 			BinaerTreNode<T> venstre = p.getVenstre();
 
-			if (venstre == null) {
+			if (venstre == null)
 				p.setVenstre(new BinaerTreNode<T>(element));
-			} else {
+			else
 				leggTilRek(venstre, element);
-			}
 
 		} else {
 			BinaerTreNode<T> hoyre = p.getHoyre();
 
-			if (hoyre == null) {
+			if (hoyre == null)
 				p.setHoyre(new BinaerTreNode<T>(element));
-			} else {
+			else
 				leggTilRek(hoyre, element);
-			}
-
 		}
 
 		return p;
-	}
-
-	/******************************************************************
-	 * Legger det spesifiserte elementet på passende plass i dette binære søketreet.
-	 * Like elementer blir lagt til høyre.
-	 ******************************************************************/
-
-	public void leggTil2(T element) {
-		//
 	}
 
 	/******************************************************************
