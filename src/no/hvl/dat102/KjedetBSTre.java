@@ -236,6 +236,23 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>,Iterabl
 		return resultat;
 	}
 
+	public int hoyde() {
+		if (antall == 0)
+			return -1;
+
+		return hoydeRek(rot);
+	}
+
+	private int hoydeRek(BinaerTreNode<T> node) {
+		if (node == null)
+			return -1;
+
+		int venstre = hoydeRek(node.getVenstre());
+		int hoyre = hoydeRek(node.getHoyre());
+
+		return (1 + Integer.max(venstre, hoyre));
+	}
+
 	public void visInorden() {
 		visInorden(rot);
 		System.out.println();
