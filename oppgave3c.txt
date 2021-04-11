@@ -1,0 +1,17 @@
+Oppgave 3c)
+
+Med antall noder n = 1024 ble gjennomsnittlig høyde målt til 21.
+
+21 = c * log2 n
+21 = c * log2 1024
+21 = c * 10
+c = 2.1
+
+Forventet høyde når n = 8192:
+c * log2 8192
+2.1 * 13
+27.3
+
+Målt gjennomsnittlig høyde under kjøring: 29
+
+Det stemmer noenlunde med forventet verdi.
