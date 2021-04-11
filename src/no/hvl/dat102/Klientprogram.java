@@ -7,8 +7,8 @@ import java.util.Collections;
 // Oppgave 3b)
 public class Klientprogram {
 
-	private final static int ANTALL_BSTRE = 100;
-	private final static int ANTALL_NODER = 1023;
+	private static final int ANTALL_BSTRE = 100;
+	private static final int ANTALL_NODER = 1023;
 
 	private static Random rnd = new Random();
 	private static ArrayList<KjedetBSTre<Integer>> treListe;

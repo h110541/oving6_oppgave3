@@ -40,11 +40,6 @@ public class KlientBSTre {
 			System.out.println("Elementet " + element + " fins ikke i bs-treet");
 		}
 
-		System.out.println();
-		bstre.leggTil(24);
-		System.out.println(bstre.fjernMaks());
-		System.out.println(bstre.fjernMaks());
-		System.out.println(bstre.fjernMaks());
 	}
 
 }
