@@ -42,9 +42,6 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>,Iterabl
 		antall = 1;
 	}
 
-	/*****************************************************************
-	 * Returnerer sann hvis dette binære trett er tomt og usann ellers.
-	 *****************************************************************/
 	@Override
 	public int antall() {
 		return antall;
