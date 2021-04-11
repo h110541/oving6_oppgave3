@@ -41,10 +41,10 @@ public class KlientBSTre {
 		}
 
 		System.out.println();
-		bstre.leggTil(-24);
-		System.out.println(bstre.fjernMin());
-		System.out.println(bstre.fjernMin());
-		System.out.println(bstre.fjernMin());
+		bstre.leggTil(24);
+		System.out.println(bstre.fjernMaks());
+		System.out.println(bstre.fjernMaks());
+		System.out.println(bstre.fjernMaks());
 	}
 
 }

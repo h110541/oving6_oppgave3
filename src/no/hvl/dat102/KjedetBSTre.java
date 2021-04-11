@@ -129,8 +129,29 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>,Iterabl
 	 ******************************************************************/
 	@Override
 	public T fjernMaks() {
-		// TODO
-		return null;
+		if (antall == 0)
+			return null;
+
+		T resultat = null;
+
+		if (rot.getHoyre() == null) {
+			resultat = rot.getElement();
+			rot = rot.getVenstre();
+		} else {
+			BinaerTreNode<T> parent = rot;
+			BinaerTreNode<T> current = rot.getHoyre();
+
+			while (current.getHoyre() != null) {
+				parent = current;
+				current = current.getHoyre();
+			}
+
+			resultat = current.getElement();
+			parent.setHoyre(current.getVenstre());
+		}
+
+		antall--;
+		return resultat;
 	}//
 
 	/******************************************************************
