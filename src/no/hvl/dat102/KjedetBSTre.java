@@ -236,6 +236,7 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>,Iterabl
 		return resultat;
 	}
 
+	// Oppgave 3a)
 	public int hoyde() {
 		if (antall == 0)
 			return -1;
